@@ -13,15 +13,7 @@ if( have_rows('flexible_content') ):
         // Case: Paragraph layout.
         if( get_row_layout() == 'home_banner' ):
             $banner = get_sub_field('home_banner');
-            // Do something...
-
-        // Case: Download layout.
-     elseif ( get_row_layout() == 'all_categorys' ) :
-        $category = get_sub_field('all_categorys');
-        get_template_part('taxonomy-course', null, array('category' => $category));
-
-            // Do something...
-        
+            // Do something...        
         endif;
 
     // End loop.
