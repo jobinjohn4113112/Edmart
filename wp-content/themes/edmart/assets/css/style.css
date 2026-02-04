@@ -185,6 +185,7 @@ table {
     --lh-36: 36px;
     --lh-30: 30px;
     --lh-26: 26px;
+    --lh-18: 18px;
     --lh-16: 16px;
 
     /* Theme Mappings */
@@ -500,7 +501,7 @@ h1 {
 
 .course-listing-wrapper .course-card figure img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .course-listing-wrapper .course-card {
@@ -640,16 +641,100 @@ h1 {
 }
 
 /* Our Course */
-.book-now-hero {
-    padding: 130px 0;
+.course-listing-course {
+    padding: 160px 0 120px !important;
+    position: relative;
 }
 
-.book-now-hero h1 {
-    font-size: var(--fs-36);
+.course-listing-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.course-listing-shape-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.course-listing-shape-3 {
+    position: absolute;
+    top: 12%;
+    left: 0;
+    z-index: -1;
+}
+
+.course-listing-course h1 {
+    margin-bottom: 24px;
+}
+
+.course-listing-course .course-listing-wrapper {
+    margin-top: 60px;
+}
+
+.course-listing-course .col-lg-4 {
+    margin-bottom: 40px;
+}
+
+.pagination-btn {
+    gap: 32px;
+}
+
+.pagination-btn a {
+    background-color: var(--color-primary-blue);
+}
+
+/* Course Schedule */
+.schedule-listing {
+    padding: 160px 0 120px !important;
+    position: relative;
+}
+
+.schedule-listing .divider {
+    margin: 24px 0 80px 0;
+}
+
+.course-listing-card-top h2 {
+    font-size: var(--fs-30);
     color: var(--color-dark-navy);
-    line-height: var(--lh-48);
-    font-weight: 700;
-    text-align: center;
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.course-listing-card-top p {
+    line-height: var(--lh-18);
+}
+
+.course-listing-card-top {
+    margin-bottom: 40px;
+}
+
+.schedule-listing-card .course-date {
+    display: flex;
+}
+
+.schedule-listing-card .course-date p {
+    color: var(--color-lightest);
+    font-size: var(--fs-22);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--lh-24);
+}
+
+.schedule-listing-card .course-date img {
+    margin-right: 12px;
+}
+
+.schedule-listing-card p span {
+    color: var(--color-dark-navy);
+    font-size: var(--fs-22);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--lh-24);
 }
 
 /* Footer */
@@ -736,6 +821,18 @@ footer hr {
 }
 
 @media (max-width: 991px) {
+
+    .course-listing-wrapper .course-card-content {
+        padding: 25px;
+    }
+
+    .pagination-btn {
+        flex-direction: column;
+    }
+
+    .course-listing-course {
+        padding: 100px 0px !important;
+    }
 
     .banner-section figure {
         max-width: 100%;
@@ -893,6 +990,14 @@ footer hr {
 }
 
 @media (max-width: 575px) {
+    .course-listing-course {
+        padding: 90px 0px 70px !important;
+    }
+
+    .pagination-btn a {
+        width: 100%;
+        justify-content: center;
+    }
 
     .course-listing {
         padding-top: 50px;
