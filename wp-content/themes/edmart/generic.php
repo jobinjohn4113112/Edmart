@@ -13,13 +13,7 @@ if( have_rows('flexible_content') ):
         // Case: Paragraph layout.
         if( get_row_layout() == 'home_banner' ):
             $banner = get_sub_field('home_banner');
-            // Do something...
-
-        // Case: Download layout.
-        elseif( get_row_layout() == 'download' ): 
-            $file = get_sub_field('file');
-            // Do something...
-
+            // Do something...        
         endif;
 
     // End loop.
