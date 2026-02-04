@@ -4,29 +4,18 @@
  */
 
 get_header();
-// Check value exists.
-if( have_rows('flexible_content') ):
 
-    // Loop through rows.
-    while ( have_rows('flexible_content') ) : the_row();
+if (have_rows('flexible_content')) :
 
-        // Case: Paragraph layout.
-        if( get_row_layout() == 'home_banner' ):
-            $banner = get_sub_field('home_banner');
-            // Do something...
+    while (have_rows('flexible_content')) : the_row();
 
-        // Case: Download layout.
-        elseif( get_row_layout() == 'download' ): 
-            $file = get_sub_field('file');
-            // Do something...
+        $layout = get_row_layout();
 
-        endif;
+        // Load template part based on layout name
+        get_template_part('template-parts/' . $layout);
 
-    // End loop.
     endwhile;
 
-// No value.
-else :
-    // Do something...
 endif;
- get_footer();
+
+get_footer();
