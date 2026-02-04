@@ -16,10 +16,12 @@ if( have_rows('flexible_content') ):
             // Do something...
 
         // Case: Download layout.
-        elseif( get_row_layout() == 'download' ): 
-            $file = get_sub_field('file');
-            // Do something...
+     elseif ( get_row_layout() == 'all_categorys' ) :
+        $category = get_sub_field('all_categorys');
+        get_template_part('taxonomy-course', null, array('category' => $category));
 
+            // Do something...
+        
         endif;
 
     // End loop.
