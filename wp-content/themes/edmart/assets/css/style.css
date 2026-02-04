@@ -713,11 +713,13 @@ h1 {
     margin-bottom: 40px;
 }
 
-.schedule-listing-card .course-date {
+.schedule-listing-card .course-date,
+.schedule-listing-card .course-time {
     display: flex;
+    gap: 12px;
 }
 
-.schedule-listing-card .course-date p {
+.course-listing-card-top .course-date p {
     color: var(--color-lightest);
     font-size: var(--fs-22);
     font-style: normal;
@@ -725,16 +727,118 @@ h1 {
     line-height: var(--lh-24);
 }
 
-.schedule-listing-card .course-date img {
+.schedule-listing-card .course-date img,
+.schedule-listing-card .course-time img {
     margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
 }
 
-.schedule-listing-card p span {
+.schedule-listing-card p {
     color: var(--color-dark-navy);
     font-size: var(--fs-22);
     font-style: normal;
     font-weight: 400;
-    line-height: var(--lh-24);
+    line-height: var(--lh-36);
+}
+
+.schedule-listing-card .row>div {
+    margin-bottom: 24px;
+}
+
+.schedule-listing .inner-card {
+    padding: 25px;
+    background-color: var(--color-lightest);
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-listing-card .divider {
+    margin: 24px 0;
+}
+
+.booking-btn-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.price-tag {
+    background-color: var(--color-light-blue);
+    color: var(--color-dark-navy);
+    padding: 14px 24px;
+    border-radius: 5px;
+    font-size: var(--fs-20);
+    font-weight: 600;
+}
+
+.book-now-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--color-primary-blue);
+    background-color: var(--color-white);
+    color: var(--color-primary-blue);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: var(--fs-18);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+}
+
+.book-now-btn:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.course-category .divider {
+    margin: 40px 0 60px;
+}
+
+.inner-card .divider {
+    margin: 24px 0;
+    width: 70%;
+}
+
+.schedule-listing-card .col-lg-4 {
+    margin-bottom: 40px;
+}
+
+.booking-details h2 {
+    font-size: var(--fs-24);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.48px;
+}
+
+.booking-details p {
+    margin-bottom: 20px;
+    line-height: var(--lh-36);
+}
+
+.booking-details .fw-semibold {
+    font-size: var(--fs-18);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+}
+
+.booking-details .booking-details-wrapper {
+    margin-bottom: 60px;
+}
+
+.booking-details .booking-details-wrapper:last-child {
+    margin-bottom: 0;
 }
 
 /* Footer */
@@ -810,6 +914,11 @@ footer hr {
 }
 
 @media (max-width: 1199px) {
+    .booking-btn-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .contact-section .contact-content {
         transform: translate(30%, -50%);
     }
@@ -821,6 +930,9 @@ footer hr {
 }
 
 @media (max-width: 991px) {
+    .schedule-listing {
+        padding: 130px 0 100px !important;
+    }
 
     .course-listing-wrapper .course-card-content {
         padding: 25px;
@@ -945,6 +1057,15 @@ footer hr {
 
 @media (max-width: 767px) {
 
+    .schedule-listing .divider {
+        margin: 24px 0 60px 0;
+    }
+
+    .inner-card .divider {
+        margin: 24px 0;
+        width: 70%;
+    }
+
     .course-listing {
         padding-top: 70px;
     }
@@ -990,6 +1111,20 @@ footer hr {
 }
 
 @media (max-width: 575px) {
+    .schedule-listing {
+        padding: 110px 0 80px !important;
+    }
+
+    .price-tag {
+        width: 100%;
+        text-align: center;
+    }
+
+    .book-now-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .course-listing-course {
         padding: 90px 0px 70px !important;
     }
