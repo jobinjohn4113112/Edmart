@@ -117,25 +117,34 @@ foreach($courses as $course):
 <?php endforeach; endif; ?>
 
 <!-- ================= STATIC BOOKING DETAILS ================= -->
-<div class="booking-details">
+    <?php if( have_rows('bottom_contents') ): ?>
+        <div class="booking-details">
 
-    <div class="booking-details-wrapper">
-        <h2>Location</h2>
-        <p>All classroom training courses are conducted at:</p>
-        <span class="fw-semibold">Unit 12, Bawnogue Shopping Centre, Dublin 22</span>
-    </div>
+            <?php while( have_rows('bottom_contents') ): the_row(); 
+                $heading          = get_sub_field('heading');
+                $description      = get_sub_field('description');
+                $bold_description = get_sub_field('bold_description');
+            ?>
 
-    <div class="booking-details-wrapper">
-        <h2>Booking Confirmation</h2>
-        <p>You will receive a confirmation email within 72 hours.</p>
-    </div>
+                <div class="booking-details-wrapper">
+                    <?php if($heading): ?>
+                        <h2><?php echo esc_html($heading); ?></h2>
+                    <?php endif; ?>
 
-    <div class="booking-details-wrapper">
-        <h2>Refund Policy</h2>
-        <p>No refund for cancellation or no-show.</p>
-    </div>
+                    <?php if($description): ?>
+                        <p><?php echo esc_html($description); ?></p>
+                    <?php endif; ?>
 
-</div><!-- booking-details -->
+                    <?php if($bold_description): ?>
+                        <span class="fw-semibold"><?php echo esc_html($bold_description); ?></span>
+                    <?php endif; ?>
+                </div>
+
+            <?php endwhile; ?>
+
+        </div>
+    <?php endif; ?>
+
 
 </div><!-- container -->
 
