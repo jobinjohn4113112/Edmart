@@ -47,9 +47,12 @@ $terms = get_terms(array(
                                     <h3><?php echo esc_html($term->name); ?></h3>
 
                                     <?php if ($term->description) : ?>
-                                        <p><?php echo esc_html(wp_trim_words($term->description, 20)); ?></p>
+                                        <p><?php echo esc_html(wp_trim_words($term->description, 12)); ?></p>
                                     <?php endif; ?>
-
+                                    <?php
+                                        $course_fee = get_field('course_fee', 'course_' . $term->term_id);
+                                    ?>
+                                    <span class="course-fee">Fee: €<?php echo $course_fee ?></span>
                                     <div class="d-flex align-items-center gap-3">
                                         <a href="<?php echo esc_url($term_link); ?>" class="banner-btn banner-btn-white">
                                             Read More
