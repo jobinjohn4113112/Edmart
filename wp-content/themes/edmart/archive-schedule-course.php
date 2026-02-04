@@ -5,7 +5,8 @@ get_header();
 
 <section class="schedule-listing">
 <div class="container">
-<h1><?php echo get_the_title(); ?></h1>
+
+<h1>Course Schedule</h1>
 <div class="divider"></div>
 
 <?php
@@ -44,7 +45,7 @@ foreach($courses as $course):
 <!-- ================= COURSE CATEGORY ================= -->
 <div class="course-category">
 
-    <div class="row">
+ <div class="row">
         <div class="col-12">
             <div class="course-listing-card-top">
                    <?php if($listing_page_title): ?>
@@ -52,7 +53,7 @@ foreach($courses as $course):
                     <h2 class="course-listing-card-title"><?php echo $listing_page_title; ?></h2>
                 </div>
                  <?php endif; ?>
-                 
+
                  <?php if($description): ?>
                 <div class="course-listing-card-body">
                     <p class="course-listing-card-text"><?php echo $description; ?></p>
@@ -66,35 +67,38 @@ foreach($courses as $course):
     <div class="schedule-listing-card">
         <div class="row">
 
-        <?php while($schedule_query->have_posts()): $schedule_query->the_post();
+        <?php 
+        while($schedule_query->have_posts()): 
+            $schedule_query->the_post();
 
             $course_date = get_field('course_date');
             $time = get_field('time');
-
-            $start_time = $time['starting_time'];
-            $end_time   = $time['ending_time'];
+            $start_time = $time['starting_time'] ?? '';
+            $end_time   = $time['ending_time'] ?? '';
         ?>
 
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="inner-card">
 
                 <div class="course-date">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/date-picker.png">
-                    <p>Course Date : <span class="fw-semibold"><?php echo $course_date; ?></span></p>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/date-picker.png" alt="">
+                    <p>Course Date :
+                        <span class="fw-semibold"><?php echo esc_html($course_date); ?></span>
+                    </p>
                 </div>
 
                 <div class="divider"></div>
 
                 <div class="course-time">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/timer-icon.png">
-                    <p>Timing : <?php echo $start_time; ?> - <?php echo $end_time; ?></p>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/timer-icon.png" alt="">
+                    <p>Timing : <?php echo esc_html($start_time . ' - ' . $end_time); ?></p>
                 </div>
 
                 <div class="booking-btn-wrapper">
-                    <div class="price-tag">€<?php echo $course_fee; ?></div>
+                    <div class="price-tag">€<?php echo esc_html($course_fee); ?></div>
                     <a href="<?php the_permalink(); ?>" class="book-now-btn">
-                        Book Now
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-blue.png">
+                        Book Now 
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-blue.png" alt="">
                     </a>
                 </div>
 
@@ -109,6 +113,43 @@ foreach($courses as $course):
     <div class="divider"></div>
 
 </div>
-<!-- ================= END COURSE CATEGORY ================= -->
 
 <?php endforeach; endif; ?>
+
+<!-- ================= STATIC BOOKING DETAILS ================= -->
+<div class="booking-details">
+
+    <div class="booking-details-wrapper">
+        <h2>Location</h2>
+        <p>All classroom training courses are conducted at:</p>
+        <span class="fw-semibold">Unit 12, Bawnogue Shopping Centre, Dublin 22</span>
+    </div>
+
+    <div class="booking-details-wrapper">
+        <h2>Booking Confirmation</h2>
+        <p>You will receive a confirmation email within 72 hours.</p>
+    </div>
+
+    <div class="booking-details-wrapper">
+        <h2>Refund Policy</h2>
+        <p>No refund for cancellation or no-show.</p>
+    </div>
+
+</div><!-- booking-details -->
+
+</div><!-- container -->
+
+<!-- Background Shapes -->
+<div class="course-listing-shape">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/our-bg-1.png" alt="">
+</div>
+<div class="course-listing-shape-2">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/our-bg-2.png" alt="">
+</div>
+<div class="course-listing-shape-3">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/our-bg-3.png" alt="">
+</div>
+
+</section>
+
+<?php get_footer(); ?>
