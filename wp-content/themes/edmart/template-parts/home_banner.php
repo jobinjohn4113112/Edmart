@@ -1,5 +1,4 @@
-<?php if (have_rows('flexible_content')): ?>
-    <?php while (have_rows('flexible_content')): the_row(); ?>
+
 
         <?php if (get_row_layout() == 'home_banner'): 
             $banner = get_sub_field('home_banner');
@@ -77,5 +76,3 @@
 
         <?php endif; ?>
 
-    <?php endwhile; ?>
-<?php endif; ?>
