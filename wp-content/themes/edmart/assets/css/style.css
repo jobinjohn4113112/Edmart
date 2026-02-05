@@ -132,10 +132,6 @@ q:after {
     content: none;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 table {
     border-collapse: collapse;
@@ -160,7 +156,7 @@ table {
     --color-footer-lightgrey: #A6ACBF;
     --color-light-gray: #f0f6ff;
     --color-yellow: #FFC300;
-
+    --color-red: #EE651B;
     /* Font Sizes */
     --fs-16: 1rem;
     /* 16px */
@@ -182,6 +178,7 @@ table {
     /* Line Heights */
     --lh-70: 70px;
     --lh-48: 48px;
+    --lh-40: 40px;
     --lh-36: 36px;
     --lh-30: 30px;
     --lh-26: 26px;
@@ -747,7 +744,7 @@ h1 {
     margin-bottom: 24px;
 }
 
-.schedule-listing .inner-card {
+.schedule-listing-card .inner-card {
     padding: 25px;
     background-color: var(--color-lightest);
     border-radius: 5px;
@@ -841,6 +838,179 @@ h1 {
     margin-bottom: 0;
 }
 
+/* Course Single */
+.course-single .course-content h2 {
+    font-size: var(--fs-30);
+    color: var(--color-primary-blue);
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -0.6px;
+}
+
+.course-single .course-content {
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.course-single .content-wrapper {
+    gap: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.requirements .requirements-left .requirements-content {
+    max-width: 592px;
+    width: 100%;
+}
+
+.requirements-content h3 {
+    font-size: var(--fs-24);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -0.48px;
+}
+
+.requirements .requirements-left,
+.requirements .requirements-right {
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-content-section {
+    padding: 80px 0;
+    background-color: var(--color-lightest);
+}
+
+.course-content-section h3 {
+    font-size: var(--fs-24);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 32px;
+    letter-spacing: -0.48px;
+}
+
+.course-content-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-content-list li {
+    font-size: var(--fs-18);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-40);
+    font-weight: 400;
+    letter-spacing: -0.36px;
+}
+
+.requirements-bottom {
+    padding: 80px 0;
+}
+
+.course-content-list li::before {
+    content: "•";
+    color: var(--color-dark-navy);
+    font-size: var(--fs-24);
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 12px;
+    line-height: var(--lh-40);
+    position: relative;
+    top: 3px;
+}
+
+.course-content-bottom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-content-bottom-list li {
+    color: var(--color-gray-blue);
+    font-size: var(--fs-18);
+    font-weight: 400;
+    line-height: var(--lh-30);
+    letter-spacing: -0.36px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.course-content-bottom-list li::before {
+    content: "•";
+    color: var(--color-gray-blue);
+    font-size: var(--fs-18);
+    font-weight: 400;
+    margin-right: 12px;
+    line-height: var(--lh-30);
+    flex-shrink: 0;
+}
+
+.requirements-bottom .divider {
+    margin-top: 60px;
+}
+
+.single-coures-scheduling h2 {
+    font-size: var(--fs-36);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 60px;
+    letter-spacing: -0.48px;
+}
+
+.single-coures-scheduling h4 {
+    font-size: var(--fs-30);
+    color: var(--color-primary-blue);
+    line-height: var(--lh-36);
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: -0.6px;
+}
+
+.single-coures-scheduling h4 span {
+    font-size: var(--fs-24);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+    font-weight: 400;
+    letter-spacing: -0.48px;
+}
+
+.single-coures-scheduling .divider {
+    margin-top: 60px;
+}
+
+.schedule-listing-card .divider {
+    margin-top: 24px !important;
+}
+
+.single-coures-scheduling .scheduling-content {
+    margin-bottom: 60px;
+}
+
+.single-coures-scheduling {
+    padding-bottom: 120px;
+}
+
+.course-single .course-img {
+    margin-bottom: 30px;
+}
+.requirements-content h3.optional {
+    color: var(--color-red);
+}
+
+
 /* Footer */
 .footer {
     background-color: var(--color-footer-bg);
@@ -930,6 +1100,16 @@ footer hr {
 }
 
 @media (max-width: 991px) {
+    .single-coures-scheduling h2 {
+        margin-bottom: 40px;
+    }
+
+    .course-single .course-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .schedule-listing {
         padding: 130px 0 100px !important;
     }
@@ -1056,6 +1236,19 @@ footer hr {
 }
 
 @media (max-width: 767px) {
+    .single-coures-scheduling .divider {
+        margin-top: 40px;
+    }
+    .single-coures-scheduling .scheduling-content {
+        margin-bottom: 40px;
+    }
+    .requirements-bottom {
+        padding: 50px 0;
+    }
+
+    .course-content-section {
+        padding: 50px 0;
+    }
 
     .schedule-listing .divider {
         margin: 24px 0 60px 0;
