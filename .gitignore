@@ -1,2 +1,31 @@
-# Ignore WordPress uploads
-wp-content/uploads/
+# WordPress Core
+/wp-admin/
+/wp-includes/
+
+# Default Themes (optional, only if you track your own themes)
+/wp-content/themes/twenty*/
+
+# Default Plugins (optional, only if you track your own plugins)
+/wp-content/plugins/akismet/
+/wp-content/plugins/hello.php
+
+# Uploads
+/wp-content/uploads/
+/wp-content/blogs.dir/
+
+# Caches, Logs, and Temp Files
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/ai1wm-backups/ # Example of a common backup plugin directory
+debug.log
+error_log
+*.log
+*.sql
+*.sql.gz
+.htaccess # Often server-specific, should be handled by deployment scripts
+
+# Configuration and Environment
+wp-config.php # Contains sensitive data (database credentials, security keys)
+.env
+.DS_Store # macOS system files
+Thumbs.db # Windows system files
