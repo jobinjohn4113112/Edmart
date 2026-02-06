@@ -690,6 +690,21 @@ h1 {
     position: relative;
 }
 
+.schedule-listing.related-course-schedule {
+    padding-top: 0px !important;
+}
+.schedule-listing.course-single{
+    padding-bottom: 0px !important;
+}
+.schedule-listing.related-course-schedule h2{
+    color: #262D46;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; /* 100% */
+    letter-spacing: -0.72px;
+}
+
 .schedule-listing .divider {
     margin: 24px 0 80px 0;
 }
@@ -867,6 +882,10 @@ h1 {
     width: 100%;
 }
 
+.requirements-section {
+    padding: 80px 0;
+}
+
 .requirements-content h3 {
     font-size: var(--fs-24);
     color: var(--color-dark-navy);
@@ -1006,7 +1025,6 @@ h1 {
 .course-single .course-img {
     margin-bottom: 30px;
 }
-
 .requirements-content h3.optional {
     color: var(--color-red);
 }
