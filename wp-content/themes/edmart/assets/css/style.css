@@ -1006,8 +1006,104 @@ h1 {
 .course-single .course-img {
     margin-bottom: 30px;
 }
+
 .requirements-content h3.optional {
     color: var(--color-red);
+}
+
+.course-single .course-img img {
+    max-width: 592px;
+    width: 100%;
+}
+
+/* Registration Form Section */
+.registration-section {
+    padding: 283px 0 129px !important;
+}
+
+.registration-sidebar {
+    background-color: #E6F0FF;
+    padding: 50px 40px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+
+.registration-sidebar .course-title {
+    font-size: 30px;
+    color: var(--color-primary-blue);
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.6px;
+    line-height: var(--lh-36);
+}
+
+.course-details-box {
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.course-details-box p {
+    font-size: var(--fs-24);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-36);
+    letter-spacing: -0.48px;
+}
+
+.course-details-box p span {
+    font-weight: 500;
+}
+
+.registration-form {
+    padding-top: 20px;
+}
+
+.registration-form .form-label {
+    font-size: var(--fs-18);
+    color: var(--color-dark-navy);
+    margin-bottom: 8px;
+}
+
+.registration-form .form-control {
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    border-radius: 0;
+    padding: 10px 0;
+    font-size: var(--fs-18);
+    color: var(--color-dark-navy);
+    background-color: transparent;
+}
+
+.registration-form .form-control:focus {
+    box-shadow: none;
+    border-color: var(--color-primary-blue);
+    border-bottom-width: 2px;
+}
+
+.registration-form .next-btn {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    padding: 12px 24px;
+    font-size: var(--fs-18);
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.registration-form .next-btn:hover {
+    background-color: var(--color-dark-navy);
+}
+
+/* Contact page */
+.contact-info-item .content p,
+.contact-info-item .content a {
+    font-size: var(--fs-18);
+    color: var(--color-dark-navy);
+    line-height: var(--lh-30);
+    font-weight: 500;
+    text-decoration: none;
 }
 
 
@@ -1100,6 +1196,24 @@ footer hr {
 }
 
 @media (max-width: 991px) {
+    .navbar-collapse {
+        padding: 0 !important;
+    }
+
+    .course-single .course-img img {
+        max-width: 100%;
+    }
+
+    .single-coures-scheduling h2 {
+        margin-bottom: 40px;
+    }
+
+    .course-single .course-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .single-coures-scheduling h2 {
         margin-bottom: 40px;
     }
@@ -1214,12 +1328,14 @@ footer hr {
 
     .navbar-nav {
         gap: 20px;
+        padding-top: 50px;
     }
 
     .btn-nav-top {
         margin-top: 20px;
         width: 100%;
         display: inline-block;
+        margin-bottom: 50px;
     }
 
     .btn-nav-top {
@@ -1239,9 +1355,11 @@ footer hr {
     .single-coures-scheduling .divider {
         margin-top: 40px;
     }
+
     .single-coures-scheduling .scheduling-content {
         margin-bottom: 40px;
     }
+
     .requirements-bottom {
         padding: 50px 0;
     }
